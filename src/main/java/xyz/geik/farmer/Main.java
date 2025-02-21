@@ -90,9 +90,6 @@ public class Main extends JavaPlugin {
     @Getter
     private static ConfigFile configFile;
 
-    @Getter
-    private static ModulesFile modulesFile;
-
     /**
      * Main integration of plugin integrations#Integrations
      */
@@ -160,12 +157,6 @@ public class Main extends JavaPlugin {
             configFile = ConfigManager.create(ConfigFile.class, (it) -> {
                 it.withConfigurer(new YamlBukkitConfigurer());
                 it.withBindFile(new File(getDataFolder(), "config.yml"));
-                it.saveDefaults();
-                it.load(true);
-            });
-            modulesFile = ConfigManager.create(ModulesFile.class, (it) -> {
-                it.withConfigurer(new YamlBukkitConfigurer());
-                it.withBindFile(new File(getDataFolder(), "modules.yml"));
                 it.saveDefaults();
                 it.load(true);
             });
