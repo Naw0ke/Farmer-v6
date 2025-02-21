@@ -67,8 +67,8 @@ public class FarmerCommand extends BaseCommand {
                 if (Main.getConfigFile().getSettings().isBuyFarmer())
                     BuyGui.showGui(player);
                 else {
-                    Titles.sendTitle(player, Main.getLangFile().getBuyDisabled().getTitle(),
-                            Main.getLangFile().getBuyDisabled().getSubtitle());
+                    Titles.sendTitle(player, ChatUtils.color(Main.getLangFile().getBuyDisabled().getTitle()),
+                            ChatUtils.color(Main.getLangFile().getBuyDisabled().getSubtitle()));
                 }
             }
             else
